@@ -8,7 +8,7 @@
 $ git clone https://github.com/zup-academy/cineminha
 ```
 
-2. Ir para a branch `hexagonal-tc1-lt3`
+2. Ir para a branch `hexagonal-tc2-lt1`
 
 ```sh
 $ git checkout hexagonal-tc2-lt1
