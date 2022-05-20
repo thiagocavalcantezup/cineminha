@@ -1,5 +1,7 @@
 package br.com.zup.edu.cineminha.model;
 
+import br.com.zup.edu.cineminha.domain.Sala;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;

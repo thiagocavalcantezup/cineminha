@@ -1,4 +1,4 @@
-package br.com.zup.edu.cineminha.controller.input;
+package br.com.zup.edu.cineminha.application;
 
 import javax.validation.constraints.NotBlank;
 

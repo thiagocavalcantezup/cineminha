@@ -2,7 +2,7 @@ package br.com.zup.edu.cineminha.controller.input;
 
 import br.com.zup.edu.cineminha.model.Sessao;
 import br.com.zup.edu.cineminha.repository.FilmeRepository;
-import br.com.zup.edu.cineminha.repository.SalaRepository;
+import br.com.zup.edu.cineminha.adapters.persistence.SalaRepository;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;

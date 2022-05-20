@@ -1,8 +1,6 @@
-package br.com.zup.edu.cineminha.controller;
+package br.com.zup.edu.cineminha.application;
 
-import br.com.zup.edu.cineminha.controller.input.NovaSalaRequest;
-import br.com.zup.edu.cineminha.model.Sala;
-import br.com.zup.edu.cineminha.repository.SalaRepository;
+import br.com.zup.edu.cineminha.domain.CadastraNovaSala;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,15 +15,14 @@ import javax.validation.Valid;
 @RequestMapping("/api/salas")
 public class SalaController {
 
-
     @Autowired
-    private SalaRepository repository;
+    private CadastraNovaSala service;
 
     @PostMapping
     public ResponseEntity<?> cadastra(@RequestBody @Valid NovaSalaRequest request,
                                       UriComponentsBuilder uriBuilder) {
 
-        var sala = repository.save(new Sala(request.getNome()));
+        var sala = service.criaNovaSalaPelo(request.getNome());
 
         var location = uriBuilder.path("/api/salas/{id}")
                 .buildAndExpand(sala.getId())
