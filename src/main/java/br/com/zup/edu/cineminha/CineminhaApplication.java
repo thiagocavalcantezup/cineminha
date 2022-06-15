@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class CineminhaApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(CineminhaApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(CineminhaApplication.class, args);
+    }
 
 }

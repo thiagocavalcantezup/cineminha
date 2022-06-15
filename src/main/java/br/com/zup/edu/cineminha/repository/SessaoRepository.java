@@ -1,7 +1,9 @@
 package br.com.zup.edu.cineminha.repository;
 
-import br.com.zup.edu.cineminha.model.Sessao;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import br.com.zup.edu.cineminha.model.Sessao;
+
 public interface SessaoRepository extends JpaRepository<Sessao, Long> {
+
 }

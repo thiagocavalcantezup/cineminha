@@ -1,6 +1,9 @@
 package br.com.zup.edu.cineminha.model;
 
-import br.com.zup.edu.cineminha.domain.Sala;
+import static javax.persistence.GenerationType.IDENTITY;
+
+import java.math.BigDecimal;
+import java.time.LocalTime;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,10 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
-import java.math.BigDecimal;
-import java.time.LocalTime;
 
-import static javax.persistence.GenerationType.IDENTITY;
+import br.com.zup.edu.cineminha.domain.Sala;
 
 @Entity
 public class Sessao {
@@ -39,17 +40,12 @@ public class Sessao {
     @Deprecated
     public Sessao() {}
 
-    public Sessao(LocalTime horario,
-                  Sala sala,
-                  Filme filme,
-                  BigDecimal preco) {
-
+    public Sessao(LocalTime horario, Sala sala, Filme filme, BigDecimal preco) {
         this.horario = horario;
         this.sala = sala;
         this.filme = filme;
         this.preco = preco;
     }
-
 
     public Long getId() {
         return id;

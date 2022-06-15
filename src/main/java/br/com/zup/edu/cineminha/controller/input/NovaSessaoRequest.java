@@ -1,13 +1,14 @@
 package br.com.zup.edu.cineminha.controller.input;
 
-import br.com.zup.edu.cineminha.model.Sessao;
-import br.com.zup.edu.cineminha.repository.FilmeRepository;
-import br.com.zup.edu.cineminha.adapters.persistence.SalaRepository;
+import java.math.BigDecimal;
+import java.time.LocalTime;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
-import java.math.BigDecimal;
-import java.time.LocalTime;
+
+import br.com.zup.edu.cineminha.adapters.persistence.SalaRepository;
+import br.com.zup.edu.cineminha.model.Sessao;
+import br.com.zup.edu.cineminha.repository.FilmeRepository;
 
 public class NovaSessaoRequest {
 
@@ -40,11 +41,13 @@ public class NovaSessaoRequest {
     }
 
     public Sessao toModel(SalaRepository salas, FilmeRepository filmes) {
-
-        var sala = salas.findById(salaId).orElseThrow(() -> new IllegalStateException("Sala nao existe"));
-        var filme = filmes.findById(filmeId).orElseThrow(() -> new IllegalStateException("Filme nao existe"));
+        var sala = salas.findById(salaId)
+                        .orElseThrow(() -> new IllegalStateException("Sala nao existe"));
+        var filme = filmes.findById(filmeId)
+                          .orElseThrow(() -> new IllegalStateException("Filme nao existe"));
 
         return new Sessao(horario, sala, filme, preco);
 
     }
+
 }

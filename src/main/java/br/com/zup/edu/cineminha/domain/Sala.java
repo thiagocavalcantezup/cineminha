@@ -1,11 +1,11 @@
 package br.com.zup.edu.cineminha.domain;
 
+import static javax.persistence.GenerationType.IDENTITY;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
-
-import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
 public class Sala {
@@ -21,7 +21,7 @@ public class Sala {
      * @deprecated hibernate apenas
      */
     @Deprecated
-    public Sala() { }
+    public Sala() {}
 
     public Sala(@NotBlank String nome) {
         this.nome = nome;
@@ -30,4 +30,5 @@ public class Sala {
     public Long getId() {
         return id;
     }
+
 }

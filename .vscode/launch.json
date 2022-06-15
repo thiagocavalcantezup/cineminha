@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-CineminhaApplication<cineminha>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "br.com.zup.edu.cineminha.CineminhaApplication",
+      "projectName": "cineminha",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}

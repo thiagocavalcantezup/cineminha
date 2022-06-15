@@ -1,12 +1,13 @@
 package br.com.zup.edu.cineminha.controller.input;
 
-import br.com.zup.edu.cineminha.model.Classificacao;
-import br.com.zup.edu.cineminha.model.Filme;
+import java.time.Duration;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
-import java.time.Duration;
+
+import br.com.zup.edu.cineminha.model.Classificacao;
+import br.com.zup.edu.cineminha.model.Filme;
 
 public class NovoFilmeRequest {
 
@@ -18,7 +19,6 @@ public class NovoFilmeRequest {
 
     @NotNull
     private Classificacao classificacao;
-
 
     public String getNome() {
         return nome;
@@ -33,8 +33,7 @@ public class NovoFilmeRequest {
     }
 
     public Filme toModel() {
-
         return new Filme(nome, Duration.ofMinutes(duracaoEmMinutos), classificacao);
-
     }
+
 }
