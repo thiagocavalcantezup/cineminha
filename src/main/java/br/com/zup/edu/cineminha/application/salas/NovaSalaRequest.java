@@ -1,4 +1,4 @@
-package br.com.zup.edu.cineminha.application;
+package br.com.zup.edu.cineminha.application.salas;
 
 import javax.validation.constraints.NotBlank;
 

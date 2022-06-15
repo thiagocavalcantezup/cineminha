@@ -1,4 +1,4 @@
-package br.com.zup.edu.cineminha.model;
+package br.com.zup.edu.cineminha.domain.filmes;
 
 import static javax.persistence.EnumType.STRING;
 import static javax.persistence.GenerationType.IDENTITY;
@@ -11,6 +11,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+
+import br.com.zup.edu.cineminha.domain.Classificacao;
 
 @Entity
 public class Filme {

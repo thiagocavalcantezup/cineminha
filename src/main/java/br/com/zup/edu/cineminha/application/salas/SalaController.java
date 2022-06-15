@@ -1,4 +1,6 @@
-package br.com.zup.edu.cineminha.application;
+package br.com.zup.edu.cineminha.application.salas;
+
+import java.net.URI;
 
 import javax.validation.Valid;
 
@@ -9,7 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import br.com.zup.edu.cineminha.domain.CadastraNovaSala;
+import br.com.zup.edu.cineminha.domain.salas.CadastraNovaSala;
+import br.com.zup.edu.cineminha.domain.salas.Sala;
 
 @RestController
 @RequestMapping("/api/salas")
@@ -24,9 +27,9 @@ public class SalaController {
     @PostMapping
     public ResponseEntity<?> cadastra(@RequestBody @Valid NovaSalaRequest request,
                                       UriComponentsBuilder uriBuilder) {
-        var sala = service.criaNovaSalaPelo(request.getNome());
+        Sala sala = service.criaNovaSalaPelo(request.getNome());
 
-        var location = uriBuilder.path("/api/salas/{id}").buildAndExpand(sala.getId()).toUri();
+        URI location = uriBuilder.path("/api/salas/{id}").buildAndExpand(sala.getId()).toUri();
 
         return ResponseEntity.created(location).build();
     }

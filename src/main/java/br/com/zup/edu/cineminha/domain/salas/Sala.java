@@ -1,4 +1,4 @@
-package br.com.zup.edu.cineminha.domain;
+package br.com.zup.edu.cineminha.domain.salas;
 
 import static javax.persistence.GenerationType.IDENTITY;
 

@@ -1,4 +1,4 @@
-package br.com.zup.edu.cineminha.model;
+package br.com.zup.edu.cineminha.domain.sessoes;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
@@ -12,7 +12,8 @@ import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 
-import br.com.zup.edu.cineminha.domain.Sala;
+import br.com.zup.edu.cineminha.domain.filmes.Filme;
+import br.com.zup.edu.cineminha.domain.salas.Sala;
 
 @Entity
 public class Sessao {
@@ -21,6 +22,7 @@ public class Sessao {
     @GeneratedValue(strategy = IDENTITY)
     private Long id;
 
+    @NotNull
     private LocalTime horario;
 
     @NotNull
